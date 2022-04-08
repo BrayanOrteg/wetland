@@ -1,0 +1,2 @@
+Hice el javadoc para cada clase por indivual y quedo guardado en la caperta de API-model
+Y con el main no funcionó el javadoc :c
