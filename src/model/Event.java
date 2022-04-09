@@ -22,7 +22,7 @@ public class Event {
 	/**
     *  this var saves the date
     * */
-	private String date;
+	private Date date;
 
 
 
@@ -32,10 +32,10 @@ public class Event {
 	* @param description <String>, must be initialized
 	* @param price <double>, must be initialized and price !=null
 	* @param client <String>, must be initialized
-	* @param date <String>, must be initialized and date !=empty
+	* @param date <Date>, must be initialized and date !=empty
 	*/
 
-	public Event(String type, String description, double price, String client, String date){
+	public Event(String type, String description, double price, String client, Date date){
 
 		this.type=type;
 		this.description=description;
@@ -82,7 +82,7 @@ public class Event {
 		return client;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
@@ -92,7 +92,7 @@ public class Event {
 	 * @param date
 	 */
 
-	public void setDate(String date){
+	public void setDate(Date date){
 
 		this.date=date;
 	}

@@ -18,23 +18,36 @@ public class Species {
 	/**
     *  this var saves the type of animal
     * */
-	private String type;
+	private TYPESPECIE type;
+
+	/**
+	 * this var save the wetland of the specie 
+	 * */
+
+	private Wetland [] wetlanSpecie;
+
+	 /**
+	  * Var for the size of the array
+	  * */
+
+	private static final int MAXWET = 80;
 
 	/**
 	* Description: This is the method constructor for Species
 	* @param name <String>, must be initialized
 	* @param scientificName <String>, must be initialized
 	* @param migratory <boolean>, must be initialized
-	* @param type <String>, must be initialized
+	* @param type <typeSpecie>, must be initialized
 	*/
 
-	public Species (String name, String scientificName, boolean migratory, String type ){
+	public Species (String name, String scientificName, boolean migratory, TYPESPECIE type){
 
 		this.name=name;
 		this.scientificName=scientificName;
 		this.migratory=migratory;
 		this.type=type;
 
+		wetlanSpecie=new Wetland[MAXWET];
 	}
 
 
@@ -72,8 +85,32 @@ public class Species {
 
 
 
-	public String getType() {
+	public TYPESPECIE getType() {
 		return type;
 	}
+
+
+	public int firstNullSpace(){
+	 	boolean emptyPosition= false;
+	 	int position= -1;
+	 	for(int i=0; i<MAXWET && !emptyPosition; i++){
+	 		if(wetlanSpecie[i]==null){
+	 			emptyPosition= true;
+	 			position= i;
+	 		}
+
+	 	}
+	 	return position;
+	 }
+
+
+	public void addWetlandToSpecie(String name, String ubication, TYPEWETLAND type, double area, String urlPic, String protectedArea, String zoneName, String description, double percentage){
+		int positionEmpty=firstNullSpace();
+		wetlanSpecie[positionEmpty]= new Wetland (name, ubication, type, area, urlPic, protectedArea, zoneName, description, percentage);
+
+	}
+
+
+
 
 }

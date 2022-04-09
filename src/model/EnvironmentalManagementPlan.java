@@ -19,7 +19,7 @@ public class EnvironmentalManagementPlan {
 	* @param description <String>, must be initialized
 	*/
 
-	public EnvironmentalManagementPlan(double percentage, String description) {
+	public EnvironmentalManagementPlan(String description, double percentage) {
 		
 		this.percentage=percentage;
 		this.description=description;
