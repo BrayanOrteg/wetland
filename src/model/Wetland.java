@@ -164,7 +164,10 @@ public class Wetland {
 
 
 
-
+	/**
+	 * Description: Method to find the null space
+	 * @return <int>, its the null position
+	 * */
 	public int firstNullSpace(){
 	 	boolean emptyPosition= false;
 	 	int position= -1;
@@ -179,6 +182,14 @@ public class Wetland {
 	 }
 
 
+
+	/**
+	* Description: This is the method to add the species of the wetland
+	* @param name <String>, must be initialized
+	* @param scientificName <String>, must be initialized
+	* @param migratory <boolean>, must be initialized
+	* @param type <TYPESPECIE>, must be initialized
+	*/
 	public void addSpeciesWetland(String name, String scientificName, boolean migratory, TYPESPECIE typeS){
 		int positionEmpty=firstNullSpace();
 		speciesWetland[positionEmpty]= new Species (name, scientificName, migratory, typeS);
@@ -186,7 +197,10 @@ public class Wetland {
 	}
 
 
-
+	/**
+	 * Description: Method to find the null space in the array
+	 * @return <int>, its the null position
+	 * */
 	public int firstNullSpaceEvent(){
 	 	boolean emptyPosition= false;
 	 	int positionEvent= -1;
@@ -200,6 +214,15 @@ public class Wetland {
 	 	return positionEvent;
 	 }
 
+
+	/**
+	* Description: This is the method to add a event in the wetland
+	* @param type <String>, must be initialized
+	* @param description <String>, must be initialized
+	* @param price <double>, must be initialized and price !=null
+	* @param client <String>, must be initialized
+	* @param date <Date>, must be initialized and date !=empty
+	*/
 
 	public void addEventWetland(String type, String description, double price, String client, Date date){
 		int positionEmpty=firstNullSpaceEvent();
@@ -219,6 +242,10 @@ public class Wetland {
 		return counterMaintenance;
 	}
 
+	/**
+    * Description: This method calculed the amount of flora in the wetland
+    * @return <int>, its the num of the total flora in the wetland 
+    */
 	public int countFlora(){
 		int floraNum=0;
 		for (int i=0; i<MAXSPECIES_WETLAND; i++){
@@ -232,6 +259,11 @@ public class Wetland {
 		return floraNum;
 	}
 
+
+	/**
+    * Description: This method calculed the amount of fauna in the wetland
+    * @return <int>, its the num of the total fauna in the wetland 
+    */
 
 	public int counterFauna(){
 		int faunaNum=0;

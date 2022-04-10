@@ -1,43 +1,51 @@
 package model;
 public class Dagma {
+
+	/**
+    *  Description: this var saves the name of the dagma
+    * */
 	private String name;
+
+	/**
+    *  Description: this var saves the size for the array of wetlands
+    * */
 	public static final int MAXNUM = 80;
+
+	/**
+    *  Description: this var saves the size for the array of species
+    * */
 	public static final int MAXNUMSPECIES = 100;
+
+	/**
+    *  Description: this var is the array of wetlands
+    * */
 	private Wetland [] wetland;
+
+	/**
+    *  Description: this var is the array of species
+    * */
 	private Species [] species;
+
+	/**
+    *  Description: this var is the array of events
+    * */
 	private Event [] event;
+
+	/**
+    *  Description: this var save the num of fauna
+    * */
 	private int counterFauna;
+
+	/**
+    *  Description: this var saves the num of flora
+    * */
 	private int counterFlora;
 
-	/**
-    * Description: This method print the species of the wetland
-    */
-
 
 
 	/**
-    * Description: This method calculed and print the wetland with the less flora
-    */
-
-
-
-	/**
-    * Description: This method calculed and print the wetland with more animales in there
-    */
-	public void WetlandWithMoreAnimals() {
-
-	}
-
-	/**
-    * Description: This method print all the information of the wetland
-    */
-
-	public void DisplayWetlandInformation() {
-
-	}
-
-	/**
-	 * Method to find a null space in the array of wetland
+	 * Description: Method to find a null space in the array of wetland
+	 * @return <int>, its the position 
 	 * */
 
 	public int firstNullSpace(){
@@ -56,6 +64,20 @@ public class Dagma {
 	 /**
 	  * Method to add a wetland to the system
 	  * */
+
+
+	/**
+    *  Description: Method to add the wetland to the array
+	 * @param name <String>, must be initialized
+	 * @param ubication <String>, must be initialized
+	 * @param type <int>, must be initialized
+	 * @param area <double>, must be initialized and area>0
+	 * @param urlPic <String>, must be initialized
+	 * @param protectedArea <String>, must be initialized and protectedArea !=empty
+	 * @param zoneName <String>, must be initialized and zoneName !=empty
+	 * @param description <String>, must be !=empty
+	 * @param percentage <double>, must be !=null
+    * */
 
 	public void addWetland(String name, String ubication, int typew, double area, String urlPic, String protectedArea, String zoneName, String description, double percentage){
 		int emptyPositions=firstNullSpace();
@@ -82,7 +104,8 @@ public class Dagma {
 	}
 
 	/**
-	 * Method to find a null space in the array of specie 
+	 * Description: Method to find a null space in the array of specie 
+	 * @return <int>, its the position null
 	 * */
 
 	public int firstNullSpaceSpecies(){
@@ -100,7 +123,11 @@ public class Dagma {
 
 
 	/**
-	 * Method to addSpecie to the system
+	 * Description: Method to addSpecie to the system
+	 * @param name <String>, must be initialized and != empty
+	 * @param scientificName <String>, must be initialized and !=empty
+	 * @param migratory <boolean>, must be initialized
+	 * @param numType <int>, must be initialized and !=null
 	 * */
 	public void addSpecie(String name, String scientificName, boolean migratory, int numType){
 		
@@ -134,7 +161,9 @@ public class Dagma {
 	}
 
 	/**
-	 * Method to add a specific specie to a specific wetland
+	 * Description: Method to add a specific specie to a specific wetland
+	 * @param nameSpecie <String>, must be initialized and !=empty
+	 * @param nameWetland <String>, must be initialized and !=empty
 	 * */
 	public void addSpecieToWetland(String nameSpecie, String nameWetland){
 
@@ -200,6 +229,9 @@ public class Dagma {
 		}
 	}
 
+	/**
+	 * Description: method to find the wetland with the less num flora
+	 * */
 
 	public void wetlandWithLessFlora(){
 		String printer="";
@@ -222,6 +254,10 @@ public class Dagma {
 	}
 
 
+	/**
+	 * Description: method to find the wetland with more num of fauna
+	 * */
+
 	public void wetlandWithMoreFauna(){
 		String printer="";
 		int wetlandNumber=-1;
@@ -241,7 +277,7 @@ public class Dagma {
 	}
 
 	/**
-	 * Method to print all the wetlands
+	 * Description: Method to print all the wetlands
 	 * */
 	public void printTheWetlands(){
 		System.out.println("The wetlands are: "+"\n");
@@ -254,7 +290,7 @@ public class Dagma {
 	}
 
 	/**
-	 * Method to print all the species
+	 * Description: Method to print all the species
 	 * */ 
 	public void printTheSpecies(){
 		System.out.println("");
@@ -266,6 +302,11 @@ public class Dagma {
 			}
 		}
 	}
+
+	/**
+	 * Description: method to find the first null space
+	 * @return <int>, its the position
+	 * */
 
 	public int firstNullSpaceEvent(){
 	 	boolean emptyPosition= false;
@@ -279,6 +320,17 @@ public class Dagma {
 	 	}
 	 	return positionEvent;
 	 }
+
+	/**
+	 * Description: method to add a event in a wetland
+	 * @param type <String>, must be initialized
+	 * @param description <String>, must be initialized
+	 * @param client <String>, must be initialized and !=empty
+	 * @param day <int>, must be initialized and date !=null
+	 * @param month <int>, must be initialized and date !=null
+	 * @param year <int>, must be initialized and date !=null
+	 * @param wetlandName <String>, must be initialized and date != empty
+	 * */
 
 	public void addEvent(String type, String description, String client, int day, int month, int year, String wetlandName){
 		
@@ -318,6 +370,11 @@ public class Dagma {
 		wetland[positionWetland].countMaintenance(counter);
 	}
 
+	/**
+	 * Description: Method to consult the num of maintenances in a wetlnad
+	 * @param nameWetland <String>, must be initialized and date !=empty
+	 * */
+
 	public void consultNumMaintenance(String nameWetland){
 	
 		int positionWetland=-1;
@@ -341,6 +398,10 @@ public class Dagma {
 
 	}
 
+	/**
+	 * Description: Method to consult the wetland that a specie have
+	 * @param name <String>, must be initialized and date !=empty
+	 * */
 
 	public void wetlandsOfSpecie(String name){
 
@@ -356,9 +417,11 @@ public class Dagma {
 	}
 
 	species[positionSpecie].printWetlandsSpecie();
-		
-
 	}
+
+	/**
+	 * Description Method to print all the information of the wetlands
+	 * */
 
 	public void printAllTheWetland(){
 		String printer="";

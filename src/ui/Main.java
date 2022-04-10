@@ -13,7 +13,9 @@ public class Main{
    private Dagma wetlandCall;
    private Scanner scan;
    
-   
+   /**
+    * Description: The constructor of the class
+    * */
    public Main() {
       wetlandCall= new Dagma("ajja");
       scan= new Scanner(System.in);
@@ -37,7 +39,11 @@ public class Main{
    }
 
 
-
+   
+   /**
+    * Description: Method to do a instruction of the user
+    * @param operation <int>
+    * */
    public void executeOperation(int operation) {
       
       switch(operation) {
@@ -96,7 +102,7 @@ public class Main{
 
 
    /**
-    * method to order the inputs of the wetland
+    * Description: method to order the inputs of the wetland
     * */
 
    public void createWetland(){
@@ -155,7 +161,7 @@ public class Main{
 
 
    /**
-    * method to order the inputs of the specie
+    * Description: method to order the inputs of the specie
     * */
 
    public void createSpecie(){
@@ -203,7 +209,9 @@ public class Main{
       System.out.println("Register successful");
    }
 
-
+   /**
+    * Description: Method to register a specie in a wetland 
+    * */
    public void registerSpecieInWetland(){
       String nameWetland,nameSpecie;
 
@@ -224,7 +232,9 @@ public class Main{
 
    }
 
-
+   /**
+    * Description: Method to order the inputs of the event an register in a wetland
+    * */
    public void registerEvent(){
 
       String type, description,client,wetlandName;
@@ -268,7 +278,9 @@ public class Main{
 
    }
 
-
+   /**
+    * Description: Method to ask for the name of the wetland to consult the num of maintenances
+    * */
    public void consultNumMaintenanceInWetland(){
 
       String wetlandName;
@@ -283,11 +295,18 @@ public class Main{
 
    }
 
+   /**
+    * Description: Method to call the method to print the wetland with the less num of flora
+    * */
+
    public void wetlandWithLessFloraConsult(){
 
       wetlandCall.wetlandWithLessFlora();
    }
 
+   /**
+    * Description: Method to order the name of the specie and the wetland to consult the wetlands where is that specie
+    * */
    public void wetlandsSpecies(){
 
       String nameSpecie;
@@ -302,15 +321,28 @@ public class Main{
       wetlandCall.wetlandsOfSpecie(nameSpecie);
    }
 
+
+
+   /**
+    * Description: Call the method to print wetlands information
+    * */
    public void printAllWetland(){
       wetlandCall.printAllTheWetland();
    }
+
+
+   /**
+    * Description: Call the method to print and calculated the wetland with more fauna 
+    * */
 
    public void wetlandMoreFauna(){
       wetlandCall.wetlandWithMoreFauna();
    }
 
 
+   /**
+    * Description: Method of the menu option
+    * */
        public int showMenu() {
       int option=0;
 

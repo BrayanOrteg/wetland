@@ -3,24 +3,24 @@ public class Event {
 
 
 	/**
-    *  this var saves the type of event
+    *  Description: this var saves the type of event
     * */
 	private String type; 
 
 	/**
-    *  this var saves the description of the event
+    *  Description: this var saves the description of the event
     * */
 	private String description;
 	/**
-    *  this var saves the price
+    *  Description: this var saves the price
     * */
 	private double price;
 	/**
-    *  this var saves the client of the event
+    *  Description: this var saves the client of the event
     * */
 	private String client;
 	/**
-    *  this var saves the date
+    *  Description: this var saves the date
     * */
 	private Date date;
 
@@ -88,7 +88,7 @@ public class Event {
 
 
 		/**
-	 * 
+	 * Description: Method set for the date
 	 * @param date
 	 */
 
