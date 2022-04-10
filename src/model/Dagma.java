@@ -325,6 +325,25 @@ public class Dagma {
 	}
 
 
+	public void wetlandsOfSpecie(String name){
+
+	int positionSpecie=-1;
+	for (int i=0; i<MAXNUMSPECIES; i++){
+		if(species[i]!=null && species[i].getName().equals(name)){
+			positionSpecie=i;
+		}
+	}
+
+	if(positionSpecie==-1){
+		System.out.println("Species not found");
+	}
+
+	species[positionSpecie].printWetlandsSpecie();
+		
+
+	}
+
+
 
 
 

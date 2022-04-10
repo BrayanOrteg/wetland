@@ -71,6 +71,13 @@ public class Main{
          wetlandWithLessFloraConsult();
 
          break;
+
+      case 7:
+
+         wetlandsSpecies();
+
+         break;
+
       
       default:
          System.out.println("Error, option no valid");
@@ -272,6 +279,20 @@ public class Main{
       wetlandCall.wetlandWithLessFlora();
    }
 
+   public void wetlandsSpecies(){
+
+      String nameSpecie;
+      System.out.println("Consult the wetland for the specie");
+
+      wetlandCall.printTheSpecies();
+      
+      System.out.println("Insert the name of the specie");
+      nameSpecie=scan.next();
+         scan.nextLine();
+
+      wetlandCall.wetlandsOfSpecie(nameSpecie);
+   }
+
 
        public int showMenu() {
       int option=0;
@@ -284,6 +305,7 @@ public class Main{
             "(4) to register a event in a wetland\n"+
             "(5) to consult the num of maintenances in a wetland\n" +
             "(6) wetland with less num of flora\n"+  
+            "(7) Wetlands of species\n"+
             "(0) Para salir"
             );
       option= scan.nextInt();

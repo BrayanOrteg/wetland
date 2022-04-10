@@ -111,6 +111,18 @@ public class Species {
 	}
 
 
+	public void printWetlandsSpecie(){
+		String printer="";
+		for (int i=0; i<MAXWET; i++){
+			if(wetlanSpecie[i]!=null){
+				printer+=wetlanSpecie[i].getName();
+
+			}
+		}
+		System.out.println("The wetlands to the specie are: \n"+printer);
+	}
+
+
 
 
 }
