@@ -201,6 +201,11 @@ public class Wetland {
 		eventWetland[positionEmpty]= new Event (type, description, price, client, date);
 	}
 
+
+	/**
+    * Description: This method calculed the amount of maintenances did it in the wetland
+    */
+
 	public void countMaintenance(int numMaintenance){
 		counterMaintenance=numMaintenance;
 	}
@@ -209,13 +214,20 @@ public class Wetland {
 		return counterMaintenance;
 	}
 
+	public int countFlora(){
+		int floraNum=0;
+		for (int i=0; i<MAXSPECIES_WETLAND; i++){
+			if (speciesWetland[i]!=null){
+				if(speciesWetland[i].getType().equals(TYPESPECIE.TERRESTIAL_FLORA) || speciesWetland[i].getType().equals(TYPESPECIE.AQUATIC_FLORA)){
+					floraNum++;
+				}
 
-	/**
-    * Description: This method calculed the amount of maintenances did it in the wetland
-    */
-
-	public void calculedTheAmountOfMaintenance() {
-		
+			}
+		}
+		return floraNum;
 	}
+
+
+
 
 }

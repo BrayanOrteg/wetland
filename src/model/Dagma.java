@@ -6,7 +6,8 @@ public class Dagma {
 	private Wetland [] wetland;
 	private Species [] species;
 	private Event [] event;
-	private int counter;
+	private int counterFauna;
+	private int counterFlora;
 
 	/**
     * Description: This method print the species of the wetland
@@ -112,20 +113,22 @@ public class Dagma {
 
 		switch(numType){
 		case 1:
-			type= TYPESPECIE.FAUNA_TERRESTRE;
+			type= TYPESPECIE.BIRD;
 			break;
 
 		case 2:
-			type= TYPESPECIE.FAUNA_ACUATICA;
+			type= TYPESPECIE.AQUATIC;
 			break;
 
 		case 3:
-			type= TYPESPECIE.FLORA_TERRESTRE;
+			type= TYPESPECIE.AQUATIC_FLORA;
 			break;
 
 		case 4:
-			type= TYPESPECIE.FLORA_ACUATICA;
+			type= TYPESPECIE.TERRESTIAL_FLORA;
 			break;
+		case 5: 
+			type= TYPESPECIE.MAMMAL;
 		}
 
 
@@ -199,6 +202,25 @@ public class Dagma {
 
 				species[positionSpecie].addWetlandToSpecie(nameWet, ubicationWet, typeWet, areaWet, urlPicWet, protectedAreaWet, zoneName, description, percentage);
 		}
+	}
+
+
+	public void wetlandWithLessFlora(){
+		String printer="";
+		int wetlandNumber=-1;
+		int numFlora=-1;
+
+		for(int i=0; i<MAXNUM;i++){
+			if(wetland[i]!=null){
+				if(wetland[i].countFlora()<numFlora || numFlora==-1){
+					numFlora= wetland[i].countFlora();
+					wetlandNumber=i;
+					printer="The wetland with less flora is "+ wetland[i].getName()+" with a number a flora: "+wetland[i].countFlora();	
+				}
+			}
+		}
+
+		System.out.println(printer);
 	}
 
 	/**
@@ -314,6 +336,8 @@ public class Dagma {
 	wetland= new Wetland [MAXNUM];
 	species= new Species [MAXNUMSPECIES];
 	event= new Event [MAXNUM];
+	counterFauna=0;
+	counterFlora=0;
 	}
 
 }

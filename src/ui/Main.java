@@ -66,6 +66,11 @@ public class Main{
 
 
          break;
+
+      case 6: 
+         wetlandWithLessFloraConsult();
+
+         break;
       
       default:
          System.out.println("Error, option no valid");
@@ -168,10 +173,11 @@ public class Main{
       System.out.println("Insert the type of the specie");
       System.out.println(
             "Select a option\n" +
-            "(1) Fauna terrestre\n" +
-            "(2) Fauna acuatica\n"+
-            "(3) Flora terrestre\n"+
-            "(4) Flora acuatica\n" 
+            "(1) BIRD\n" +
+            "(2) AQUATIC\n"+
+            "(3) AQUATIC FLORA\n"+
+            "(4) TERRESTIAL FLORA\n" +
+            "(5) MAMMAL"
             );
       sType=scan.nextInt(); 
          scan.nextLine();
@@ -261,6 +267,11 @@ public class Main{
 
    }
 
+   public void wetlandWithLessFloraConsult(){
+
+      wetlandCall.wetlandWithLessFlora();
+   }
+
 
        public int showMenu() {
       int option=0;
@@ -271,7 +282,8 @@ public class Main{
             "(2) to register a specie\n"+
             "(3) to register a specie in a wetland\n"+
             "(4) to register a event in a wetland\n"+
-            "(5) to consult the num of maintenances in a wetland\n" +  
+            "(5) to consult the num of maintenances in a wetland\n" +
+            "(6) wetland with less num of flora\n"+  
             "(0) Para salir"
             );
       option= scan.nextInt();
