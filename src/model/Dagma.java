@@ -13,16 +13,12 @@ public class Dagma {
     * Description: This method print the species of the wetland
     */
 
-	public void wetlandsOfSpecies() {
 
-	}
 
 	/**
     * Description: This method calculed and print the wetland with the less flora
     */
-	public void lessFloraSpeciesWetland() {
 
-	}
 
 
 	/**
