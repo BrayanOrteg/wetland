@@ -77,7 +77,16 @@ public class Main{
          wetlandsSpecies();
 
          break;
+      case 8:
 
+         printAllWetland();
+
+      break;
+   case 9:
+
+      wetlandMoreFauna();
+
+      break;
       
       default:
          System.out.println("Error, option no valid");
@@ -200,13 +209,13 @@ public class Main{
 
       wetlandCall.printTheWetlands();
 
-      System.out.println("Insert the name of the wetland");
+      System.out.println("Insert the name of the wetland (the name not the number)");
       nameWetland=scan.next();
          scan.nextLine();
 
       wetlandCall.printTheSpecies();
       
-      System.out.println("Insert the name of the specie");
+      System.out.println("Insert the name of the specie (the name not the number)");
       nameSpecie=scan.next();
          scan.nextLine();   
 
@@ -223,7 +232,7 @@ public class Main{
       
 
       System.out.println("Register a event");
-      System.out.println("Insert the name of the wetland to add the event\n");
+      System.out.println("Insert the name of the wetland to add the event (the name not the number)\n");
 
       wetlandCall.printTheWetlands();
 
@@ -285,7 +294,7 @@ public class Main{
       System.out.println("Consult the wetland for the specie");
 
       wetlandCall.printTheSpecies();
-      
+
       System.out.println("Insert the name of the specie");
       nameSpecie=scan.next();
          scan.nextLine();
@@ -293,11 +302,20 @@ public class Main{
       wetlandCall.wetlandsOfSpecie(nameSpecie);
    }
 
+   public void printAllWetland(){
+      wetlandCall.printAllTheWetland();
+   }
+
+   public void wetlandMoreFauna(){
+      wetlandCall.wetlandWithMoreFauna();
+   }
+
 
        public int showMenu() {
       int option=0;
 
       System.out.println(
+            "\n"+
             "Select a option to start\n" +
             "(1) to register a wetland\n" +
             "(2) to register a specie\n"+
@@ -306,6 +324,8 @@ public class Main{
             "(5) to consult the num of maintenances in a wetland\n" +
             "(6) wetland with less num of flora\n"+  
             "(7) Wetlands of species\n"+
+            "(8) Print all the wetlands\n"+
+            "(9) wetland with more num of fauna\n"+
             "(0) Para salir"
             );
       option= scan.nextInt();

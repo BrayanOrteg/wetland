@@ -88,7 +88,12 @@ public class Wetland {
     * @return <String>, 
     */
 	public String toString(){
-	return (name+"\n"+ubication+"\n"+type+"\n"+area+"\n"+urlPic+"\n"+protectedArea+"\n"+zoneName+"\n"+plan);
+		int numTotalFlora=countFlora();
+		int numTotalFauna=counterFauna();
+
+	return ("*** WETLAND INFORMATION ***\n"+"Name: "+name+"\n"+"ubication: "+ubication+"\n"+"Type: "+type+"\n"+"Area: "+area+"\n"+"Pic: "+urlPic+"\n"+"Protected area:"+protectedArea+"\n"+ 
+		"Zone name: "+zoneName+"\n"+"Environmental Plan: "+plan+"\n"+"The num of the total flora Species is: "+ numTotalFlora+"\n"+"The num of the total fauna Species is: "+ numTotalFauna+"\n");
+
 	}
 
 
@@ -225,6 +230,20 @@ public class Wetland {
 			}
 		}
 		return floraNum;
+	}
+
+
+	public int counterFauna(){
+		int faunaNum=0;
+		for (int i=0; i<MAXSPECIES_WETLAND; i++){
+			if (speciesWetland[i]!=null){
+				if(speciesWetland[i].getType().equals(TYPESPECIE.BIRD) || speciesWetland[i].getType().equals(TYPESPECIE.AQUATIC) || speciesWetland[i].getType().equals(TYPESPECIE.MAMMAL)){
+					faunaNum++;
+				}
+
+			}
+		}
+		return faunaNum;
 	}
 
 

@@ -207,13 +207,34 @@ public class Dagma {
 		int numFlora=-1;
 
 		for(int i=0; i<MAXNUM;i++){
-			if(wetland[i]!=null){
+
+			if (wetland [i]!=null){
 				if(wetland[i].countFlora()<numFlora || numFlora==-1){
 					numFlora= wetland[i].countFlora();
 					wetlandNumber=i;
-					printer="The wetland with less flora is "+ wetland[i].getName()+" with a number a flora: "+wetland[i].countFlora();	
+					printer="The wetland with less flora is "+ wetland[i].getName()+" with a number a flora: "+wetland[i].countFlora()+" Species";	
 				}
 			}
+			
+		}
+
+		System.out.println(printer);
+	}
+
+
+	public void wetlandWithMoreFauna(){
+		String printer="";
+		int wetlandNumber=-1;
+		int numFauna=-1;
+
+		for(int i=0; i<MAXNUM;i++){
+
+			if(wetland [i]!=null && wetland[i].counterFauna()>numFauna){
+				numFauna= wetland[i].countFlora();
+				wetlandNumber=i;
+				printer="The wetland with more fauna is "+ wetland[i].getName()+" with a number a fauna: "+wetland[i].counterFauna()+" Species";
+			}
+			
 		}
 
 		System.out.println(printer);
@@ -337,6 +358,18 @@ public class Dagma {
 	species[positionSpecie].printWetlandsSpecie();
 		
 
+	}
+
+	public void printAllTheWetland(){
+		String printer="";
+		for(int i=0; i<MAXNUM;i++){
+			if (wetland[i]!=null) {
+				printer+=wetland[i].toString();
+				
+			}
+
+		}
+		System.out.println("The wetlands are: \n"+printer);
 	}
 
 

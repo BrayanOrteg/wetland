@@ -33,7 +33,7 @@ public class EnvironmentalManagementPlan {
     */
 
 	public String toString(){
-		return (percentage+"\n"+description);
+		return ("\n"+"Percentage: "+percentage+"\n"+"Description: "+description);
 
 	}
 
