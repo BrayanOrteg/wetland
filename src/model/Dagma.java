@@ -266,7 +266,7 @@ public class Dagma {
 		for(int i=0; i<MAXNUM;i++){
 
 			if(wetland [i]!=null && wetland[i].counterFauna()>numFauna){
-				numFauna= wetland[i].countFlora();
+				numFauna= wetland[i].counterFauna();
 				wetlandNumber=i;
 				printer="The wetland with more fauna is "+ wetland[i].getName()+" with a number a fauna: "+wetland[i].counterFauna()+" Species";
 			}
